@@ -1,85 +1,213 @@
-Mini Cashier
+Mini Cashier — Python Project
 
-Mini Cashier adalah program kasir sederhana berbasis Python yang digunakan untuk menghitung total harga belanja berdasarkan harga barang dan jumlah barang yang dibeli.
+Mini Cashier adalah proyek latihan Python yang dikembangkan secara bertahap untuk menerapkan konsep dasar pemrograman ke dalam program kasir sederhana.
 
-Proyek ini merupakan implementasi awal dari pembelajaran fundamental Python, khususnya Variables & Data Types, Operators & Expressions, serta Input & Output.
+Proyek ini dibuat sebagai bagian dari perjalanan belajar Python, dengan pendekatan belajar → memahami → mengimplementasikan → menguji.
 
-Fitur
+---
 
-- Memasukkan nama barang.
-- Memasukkan harga barang.
-- Memasukkan jumlah barang.
-- Menghitung total belanja secara otomatis.
-- Menampilkan informasi barang dan total belanja dalam bentuk struk sederhana.
+Project Overview
 
-Teknologi
+Mini Cashier merupakan program kasir sederhana berbasis terminal (CLI) yang menerima input barang, harga, dan jumlah pembelian, kemudian menghitung total belanja serta menentukan diskon berdasarkan status member.
 
-- Python 3
+Proyek ini dikembangkan secara bertahap mengikuti materi pembelajaran Python.
 
-Cara Menjalankan Program
+Version History
 
-1. Pastikan Python 3 sudah terinstal.
-2. Download atau clone repository ini.
-3. Jalankan file "mini_cashier.py" menggunakan Python.
+Mini Cashier V1.1 — Basic Cashier
+
+Versi awal berfokus pada proses transaksi sederhana.
+
+Fitur:
+
+- Input nama barang.
+- Input harga barang.
+- Input jumlah barang.
+- Menghitung total belanja.
+- Menampilkan struk sederhana.
+
+Konsep Python yang diterapkan:
+
+- Variables
+- Data Types
+- Input & Output
+- Type Conversion
+- Arithmetic Operators
+- F-Strings
+
+Mini Cashier V2 — Member Discount System
+
+Versi kedua menambahkan sistem diskon berdasarkan status member dan total belanja.
+
+Fitur tambahan:
+
+- Input status member.
+- Menentukan diskon berdasarkan kondisi pembelian.
+- Menghitung nominal potongan.
+- Menghitung pembayaran akhir.
+- Menampilkan persentase diskon pada struk.
+
+Aturan diskon:
+
+Status Member| Total Belanja| Diskon
+Tidak| Berapa pun| 0%
+Iya| Di bawah Rp25.000| 5%
+Iya| Rp25.000 atau lebih| 10%
+
+---
+
+Python Concepts Applied
+
+Module 01 — Variables & Data Types
+
+Digunakan untuk menyimpan informasi transaksi, seperti:
+
+- "barang1"
+- "harga1"
+- "jumlah1"
+- "member"
+- "total"
+- "diskon"
+- "potongan"
+- "bayar"
+
+Program menggunakan tipe data "str", "int", dan "float" sesuai kebutuhan.
+
+Module 02 — Operators & Expressions
+
+Operator matematika digunakan untuk menghitung transaksi:
+
+- "*" untuk menghitung total harga barang.
+- "*" untuk menghitung nominal diskon.
+- "-" untuk menghitung pembayaran akhir.
+
+Module 03 — Input & Output
+
+Program menerima data menggunakan "input()" dan menampilkan hasil menggunakan "print()".
+
+Konversi tipe data digunakan agar harga dan jumlah dapat dihitung secara matematis.
+
+F-Strings digunakan untuk menampilkan informasi transaksi dengan format yang lebih terstruktur.
+
+Module 04 — Conditional Statements
+
+Mini Cashier V2 menerapkan konsep percabangan untuk menentukan kelayakan diskon.
+
+Nested If
+
+Program menggunakan nested "if" untuk memeriksa status member terlebih dahulu, kemudian memeriksa total belanja.
+
+if member == "Iya":
+    if total >= 25000:
+        diskon = 0.10
+    else:
+        diskon = 0.05
+
+Logika tersebut menghasilkan:
+
+- Member dengan belanja minimal Rp25.000 mendapatkan diskon 10%.
+- Member dengan belanja di bawah Rp25.000 mendapatkan diskon 5%.
+
+Else
+
+Jika pembeli bukan member, diskon tetap 0% karena nilai awal variabel "diskon" sudah ditetapkan menjadi 0.
+
+Perhitungan setelah percabangan
+
+Setelah persentase diskon ditentukan, program menghitung nominal potongan dan pembayaran akhir.
+
+potongan = total * diskon
+bayar = total - potongan
+
+Hal ini menunjukkan penerapan conditional statements dalam menentukan nilai variabel yang kemudian digunakan pada proses perhitungan berikutnya.
+
+---
+
+How It Works
+
+1. Program menampilkan header Mini Cashier.
+2. Pengguna memasukkan nama barang.
+3. Pengguna memasukkan harga dan jumlah barang.
+4. Pengguna menentukan status member.
+5. Program menghitung total belanja.
+6. Program memeriksa status member dan menentukan persentase diskon.
+7. Program menghitung nominal potongan.
+8. Program menghitung pembayaran akhir.
+9. Program menampilkan struk transaksi.
+
+---
+
+How to Run
+
+Pastikan Python telah terinstal di perangkat.
+
+Jalankan file program melalui terminal:
 
 python mini_cashier.py
 
-Contoh Penggunaan
+Program akan meminta input transaksi dan menampilkan hasilnya secara langsung.
+
+---
+
+📄 Example Output
 
 ================================
         MINI CASHIER
 ================================
+
 Masukkan nama barang pertama : Buku
-Masukkan harga barang pertama : 5000
-Masukkan jumlah barang pertama : 3
+Masukkan harga barang pertama : 30000
+Masukkan jumlah barang pertama : 2
+Apakah anda member ? Iya / Tidak : Iya
 
 ========== STRUK BELANJA ==========
 Nama barang   : Buku
-Harga barang  : Rp5000
-Jumlah        : 3
-Total belanja : Rp15000
+Harga barang  : Rp30000
+Jumlah        : 2
+Total belanja : Rp60000
+Diskon        : 10%
+Bayar         : 54000
 =================================
 Terima kasih telah berbelanja!
 
-Pembelajaran yang Diterapkan
+---
 
-Module 01 — Variables & Data Types
+Project Objectives
 
-- Menggunakan variabel untuk menyimpan data barang.
-- Memahami penggunaan tipe data "str" dan "int".
-- Mengubah input pengguna menjadi tipe data numerik menggunakan "int()".
+Mini Cashier dikembangkan untuk:
 
-Module 02 — Operators & Expressions
+- Mempraktikkan materi Python secara bertahap.
+- Memahami hubungan antara input, proses, dan output.
+- Mengimplementasikan logika percabangan dalam program nyata.
+- Melatih kemampuan menyusun program secara mandiri.
+- Menjadi fondasi untuk pengembangan sistem kasir yang lebih kompleks.
 
-- Menggunakan operator perkalian "*".
-- Menghitung total belanja menggunakan harga barang dikalikan jumlah barang.
-- Menyimpan hasil perhitungan ke dalam variabel "total".
+---
 
-Module 03 — Input & Output
+Future Development
 
-- Menggunakan "input()" untuk menerima data dari pengguna.
-- Menggunakan "print()" untuk menampilkan hasil program.
-- Menggunakan f-string untuk menampilkan informasi secara lebih terstruktur.
-- Membuat tampilan struk belanja sederhana.
+Rencana pengembangan berikutnya:
 
-Tujuan Proyek
+- Multiple item / banyak barang.
+- Input validation.
+- Exception handling.
+- Perulangan transaksi.
+- Penggunaan functions.
+- Penyimpanan data transaksi.
+- Integrasi database.
 
-Proyek ini dibuat sebagai bentuk implementasi nyata dari pembelajaran fundamental Python, sekaligus menjadi langkah awal dalam membangun portfolio programming.
+---
 
-Status Proyek
+Developer
 
-Versi awal — Basic Cashier Program.
+Andhika Syahputra
 
-Pengembangan selanjutnya dapat mencakup:
+Python Learner · Aspiring Developer
 
-- Mendukung lebih dari satu barang.
-- Menambahkan validasi input.
-- Menambahkan diskon.
-- Menghitung uang pembayaran dan kembalian.
-- Menggunakan conditional statements dan loops.
+Proyek ini merupakan bagian dari perjalanan belajar Python melalui praktik dan pengembangan proyek nyata.
 
-Author
+---
 
-Andhika
+Learn → Build → Test → Improve.
 
 GitHub: "dikadika28123-biz" (https://github.com/dikadika28123-biz)
